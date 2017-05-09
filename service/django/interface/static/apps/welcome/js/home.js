@@ -2,11 +2,12 @@ var background_mirror_image = $("#background_mirror_image");
 TweenMax.to(background_mirror_image, 6, {opacity:0});
 // animation
 
+var controller = new ScrollMagic.Controller();
+
 var intro_text = $("#intro_text");
 TweenMax.to(intro_text, 4, {css:{color: "rgb(255, 255, 255)", visibility: "visible"}});
 var intro_text_img = $("#intro_text img");
 TweenMax.fromTo(intro_text_img, 8, {css: {opacity: 0, visibility: "visible", transform: "scale(0.4)"}}, {css:{opacity: 1, visibility: "visible", transform: "scale(1)"}});
-var controller = new ScrollMagic.Controller();
 new ScrollMagic.Scene({
  triggerElement: '#lead_image_fade',
  duration: 300,
@@ -23,18 +24,18 @@ new ScrollMagic.Scene({
 //.addIndicators({name:'intro_text',colorStart:'blue',colorTrigger:'orange' })
 .addTo(controller);
 new ScrollMagic.Scene({
- triggerElement: '#dedication',
+ triggerElement: '#welcome_text',
  duration: 400,
  offset: -150 
 })
-.setTween("#dedication h1", .5, {opacity:1})
-.addIndicators({name:'dedication h1 opacity',colorStart:'blue',colorTrigger:'orange' })
+.setTween("#welcome_text", .5, {opacity:1})
+.addIndicators({name:'welcome_text opacity',colorStart:'blue',colorTrigger:'orange' })
 .addTo(controller);
 new ScrollMagic.Scene({
- triggerElement: "#dedication h1",
- duration: 600,
- offset: 200 
+ triggerElement: "#welcome_text",
+ duration: 800,
+ offset: 300 
 })
-.setPin("#dedication h1")
-.addIndicators({name:'dedication h1i pin',colorStart:'purple',colorTrigger:'yellow' })
+.setPin("#welcome_text")
+.addIndicators({name:'welcome_text pin',colorStart:'purple',colorTrigger:'yellow' })
 .addTo(controller);
