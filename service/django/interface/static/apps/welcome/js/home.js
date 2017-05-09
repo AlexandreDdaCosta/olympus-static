@@ -13,12 +13,28 @@ new ScrollMagic.Scene({
  offset: 350 
 })
 .setTween("#lead_image_fade", 1.0, {opacity:0})
-.addIndicators({name:'lead_image_fade',colorStart:'yellow',colorTrigger:'green' })
+//.addIndicators({name:'lead_image_fade',colorStart:'yellow',colorTrigger:'green' })
 .addTo(controller);
 new ScrollMagic.Scene({
  duration: 200,
  offset: 50 
 })
 .setTween("#intro_text", 1.0, {opacity:0})
-.addIndicators({name:'intro_text',colorStart:'blue',colorTrigger:'orange' })
+//.addIndicators({name:'intro_text',colorStart:'blue',colorTrigger:'orange' })
+.addTo(controller);
+new ScrollMagic.Scene({
+ triggerElement: '#dedication',
+ duration: 400,
+ offset: -150 
+})
+.setTween("#dedication h1", .5, {opacity:1})
+.addIndicators({name:'dedication h1 opacity',colorStart:'blue',colorTrigger:'orange' })
+.addTo(controller);
+new ScrollMagic.Scene({
+ triggerElement: "#dedication h1",
+ duration: 600,
+ offset: 200 
+})
+.setPin("#dedication h1")
+.addIndicators({name:'dedication h1i pin',colorStart:'purple',colorTrigger:'yellow' })
 .addTo(controller);
