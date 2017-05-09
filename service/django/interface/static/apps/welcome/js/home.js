@@ -20,7 +20,7 @@ new ScrollMagic.Scene({
  duration: 200,
  offset: 50 
 })
-.setTween("#intro_text", 1.0, {opacity:0})
+.setTween("#intro_text", 1.0, {opacity:0, ease: Power2.easeIn})
 //.addIndicators({name:'intro_text',colorStart:'blue',colorTrigger:'orange' })
 .addTo(controller);
 new ScrollMagic.Scene({
@@ -28,7 +28,7 @@ new ScrollMagic.Scene({
  duration: 400,
  offset: -150 
 })
-.setTween("#welcome_text", .5, {opacity:1})
+.setTween("#welcome_text", .5, {opacity:1, ease: Power2.easeOut})
 .addIndicators({name:'welcome_text opacity',colorStart:'blue',colorTrigger:'orange' })
 .addTo(controller);
 new ScrollMagic.Scene({
