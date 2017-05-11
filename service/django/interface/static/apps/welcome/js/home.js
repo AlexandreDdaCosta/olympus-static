@@ -23,6 +23,16 @@ new ScrollMagic.Scene({
 new ScrollMagic.Scene({
  triggerElement: '#intro_image',
  duration: "50%",
+ offset: 350 
+})
+.setTween("#lead_image_fade", 1.0, {opacity:0, ease: Power1.easeOut})
+.addIndicators({name:'lead_image_fade',colorStart:'yellow',colorTrigger:'green' })
+.addTo(controller);
+
+
+new ScrollMagic.Scene({
+ triggerElement: '#intro_image',
+ duration: "50%",
  offset: 600 
 })
 .setTween("#intro_image", 1.0, {opacity: 0})
