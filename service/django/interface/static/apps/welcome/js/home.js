@@ -64,7 +64,7 @@ new ScrollMagic.Scene({
 // .addIndicators({name:'welcome_header_name opacity',colorStart:'orange',colorTrigger:'red' })
 .addTo(controller);
 
-var headerTween = TweenMax.staggerFromTo('.welcome_header_slogan', 1, { y: 50, x: -50, opacity: 0 }, { y: 0, x: 0, opacity: 1 });
+var headerTween = TweenMax.staggerFromTo('.welcome_header_slogan', 1, { y: 60, x: -60, opacity: 0 }, { y: 0, x: 0, opacity: 1 });
 var headerScene = new ScrollMagic.Scene({
   triggerElement: '.welcome_header_slogan',
   duration: "30%",
