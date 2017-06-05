@@ -85,7 +85,7 @@ new ScrollMagic.Scene({
 
 new ScrollMagic.Scene({
  triggerElement: '.welcome_header_slogan',
- duration: "50%",
+ duration: "80%",
  offset: 300 
 })
 .setTween("#welcome", .5, {opacity:0, ease: Power1.easeIn})
