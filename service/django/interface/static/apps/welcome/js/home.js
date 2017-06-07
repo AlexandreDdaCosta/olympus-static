@@ -3,11 +3,31 @@
 $(document).ready(function(){
     $(window).scroll(function(){
     var pxToTop = $(window).scrollTop();
+    var breakOffset = $(window).height() * .25;
 
     var blogOffset = $('#welcome_header_slogan').offset().top;
-    if (pxToTop > blogOffset){
+    var photographyOffset = $('#blog_summary').offset().top - breakOffset;
+    var projectsOffset = $('#photography_summary').offset().top - breakOffset;
+    var endOffset = $('#projects_summary').offset().top - breakOffset
+    if (pxToTop < blogOffset){
+        jQuery('body').removeClass('blog_background');
+        jQuery('body').removeClass('photography_background');
+        jQuery('body').removeClass('projects_background');
+    }else if (pxToTop >= blogOffset && pxToTop < photographyOffset){
         jQuery('body').addClass('blog_background');
+        jQuery('body').removeClass('photography_background');
+        jQuery('body').removeClass('projects_background');
+    }else if (pxToTop >= photographyOffset && pxToTop < projectsOffset){
+        jQuery('body').addClass('photography_background');
+        jQuery('body').removeClass('blog_background');
+        jQuery('body').removeClass('projects_background');
+    }else if (pxToTop >= projectsOffset && pxToTop < endOffset){
+        jQuery('body').addClass('projects_background');
+        jQuery('body').removeClass('photography_background');
+        jQuery('body').removeClass('blog_background');
     }else{
+        jQuery('body').removeClass('projects_background');
+        jQuery('body').removeClass('photography_background');
         jQuery('body').removeClass('blog_background');
     }
 });
@@ -32,7 +52,7 @@ new ScrollMagic.Scene({
  offset: 350 
 })
 .setTween("#lead_image_fade", 1.0, {opacity:0, ease: Power1.easeOut})
-//.addIndicators({name:'lead_image_fade',colorStart:'yellow',colorTrigger:'green' })
+//.addIndicators({name:'lead_image_fade',colorStart:'purple',colorTrigger:'yellow' })
 .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -50,7 +70,7 @@ new ScrollMagic.Scene({
  offset: 600 
 })
 .setTween("#intro_image", 1.0, {opacity: 0})
-//.addIndicators({name:'intro_image',colorStart:'yellow',colorTrigger:'green' })
+//.addIndicators({name:'intro_image',colorStart:'green',colorTrigger:'red' })
 .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -58,7 +78,7 @@ new ScrollMagic.Scene({
  offset: 50 
 })
 .setTween("#intro_text", 1.0, {opacity:0, ease: Power0.easeNone})
-//.addIndicators({name:'intro_text',colorStart:'blue',colorTrigger:'orange' })
+//.addIndicators({name:'intro_text',colorStart:'red',colorTrigger:'blue' })
 .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -76,7 +96,7 @@ new ScrollMagic.Scene({
  offset: -150 
 })
 .setTween(".welcome_header_name", .5, {opacity:1, ease: Power2.easeOut})
-//.addIndicators({name:'welcome_header_name opacity',colorStart:'orange',colorTrigger:'red' })
+//.addIndicators({name:'welcome_header_name opacity',colorStart:'orange',colorTrigger:'purple' })
 .addTo(controller);
 
 var headerTween = TweenMax.staggerFromTo('.welcome_header_slogan', 1, { y: 60, x: -60, opacity: 0 }, { y: 0, x: 0, opacity: 1 });
@@ -86,7 +106,7 @@ var headerScene = new ScrollMagic.Scene({
   offset: -150
 })
 .setTween(headerTween)
-//.addIndicators({name:'welcome_header_slogan',colorStart:'red',colorTrigger:'yellow' })
+//.addIndicators({name:'welcome_header_slogan',colorStart:'purple',colorTrigger:'yellow' })
 .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -99,10 +119,64 @@ new ScrollMagic.Scene({
 .addTo(controller);
 
 new ScrollMagic.Scene({
- triggerElement: '.welcome_header_slogan',
- duration: "80%",
- offset: 300 
+ triggerElement: '#blog',
+ duration: "60%",
+ offset: -400 
 })
 .setTween("#welcome_overlay", .5, {opacity:1, ease: Power1.easeIn})
-//.addIndicators({name:'welcome_overlay_fadeIn',colorStart:'purple',colorTrigger:'blue' })
+//.addIndicators({name:'welcome_overlay_fadeIn',colorStart:'green',colorTrigger:'red' })
+.addTo(controller);
+
+new ScrollMagic.Scene({
+ triggerElement: '#blog',
+ duration: "50%",
+ offset: -100 
+})
+.setTween("#blog_overlay", .5, {opacity:0, ease: Power1.easeOut})
+.addIndicators({name:'blog_overlay_fadeOut',colorStart:'red',colorTrigger:'blue' })
+.addTo(controller);
+
+new ScrollMagic.Scene({
+ triggerElement: '#blog_summary',
+ duration: "50%",
+ offset: -100 
+})
+.setTween("#blog_overlay", .5, {opacity:1, ease: Power1.easeOut})
+.addIndicators({name:'blog_overlay_fadeIn',colorStart:'blue',colorTrigger:'orange' })
+.addTo(controller);
+
+new ScrollMagic.Scene({
+ triggerElement: '#photography',
+ duration: "50%",
+ offset: -100 
+})
+.setTween("#photography_overlay", .5, {opacity:0, ease: Power1.easeOut})
+.addIndicators({name:'photography_overlay_fadeOut',colorStart:'orange',colorTrigger:'purple' })
+.addTo(controller);
+
+new ScrollMagic.Scene({
+ triggerElement: '#photography_summary',
+ duration: "50%",
+ offset: -100 
+})
+.setTween("#photography_overlay", .5, {opacity:1, ease: Power1.easeOut})
+.addIndicators({name:'photography_overlay_fadeIn',colorStart:'purple',colorTrigger:'yellow' })
+.addTo(controller);
+
+new ScrollMagic.Scene({
+ triggerElement: '#projects',
+ duration: "50%",
+ offset: -100 
+})
+.setTween("#projects_overlay", .5, {opacity:0, ease: Power1.easeOut})
+.addIndicators({name:'projects_overlay_fadeOut',colorStart:'yellow',colorTrigger:'green' })
+.addTo(controller);
+
+new ScrollMagic.Scene({
+ triggerElement: '#projects_summary',
+ duration: "50%",
+ offset: -100 
+})
+.setTween("#projects_overlay", .5, {opacity:1, ease: Power1.easeOut})
+.addIndicators({name:'projects_overlay_fadeIn',colorStart:'green',colorTrigger:'red' })
 .addTo(controller);
