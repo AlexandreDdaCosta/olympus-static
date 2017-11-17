@@ -52,7 +52,7 @@ new ScrollMagic.Scene({
  offset: 350 
 })
 .setTween("#lead_image_fade", 1.0, {opacity:0, ease: Power1.easeOut})
-//.addIndicators({name:'lead_image_fade',colorStart:'purple',colorTrigger:'yellow' })
+.addIndicators({name:'lead_image_fade',colorStart:'purple',colorTrigger:'yellow' })
 .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -133,7 +133,7 @@ new ScrollMagic.Scene({
  offset: -100 
 })
 .setTween("#blog_overlay", .5, {opacity:0, ease: Power1.easeOut})
-.addIndicators({name:'blog_overlay_fadeOut',colorStart:'red',colorTrigger:'blue' })
+//.addIndicators({name:'blog_overlay_fadeIn',colorStart:'red',colorTrigger:'blue' })
 .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -142,7 +142,7 @@ new ScrollMagic.Scene({
  offset: -100 
 })
 .setTween("#blog_overlay", .5, {opacity:1, ease: Power1.easeOut})
-.addIndicators({name:'blog_overlay_fadeIn',colorStart:'blue',colorTrigger:'orange' })
+//.addIndicators({name:'blog_overlay_fadeOut',colorStart:'blue',colorTrigger:'orange' })
 .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -151,7 +151,7 @@ new ScrollMagic.Scene({
  offset: -100 
 })
 .setTween("#photography_overlay", .5, {opacity:0, ease: Power1.easeOut})
-.addIndicators({name:'photography_overlay_fadeOut',colorStart:'orange',colorTrigger:'purple' })
+//.addIndicators({name:'photography_overlay_fadeIn',colorStart:'orange',colorTrigger:'purple' })
 .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -160,7 +160,7 @@ new ScrollMagic.Scene({
  offset: -100 
 })
 .setTween("#photography_overlay", .5, {opacity:1, ease: Power1.easeOut})
-.addIndicators({name:'photography_overlay_fadeIn',colorStart:'purple',colorTrigger:'yellow' })
+//.addIndicators({name:'photography_overlay_fadeOut',colorStart:'purple',colorTrigger:'yellow' })
 .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -169,7 +169,7 @@ new ScrollMagic.Scene({
  offset: -100 
 })
 .setTween("#projects_overlay", .5, {opacity:0, ease: Power1.easeOut})
-.addIndicators({name:'projects_overlay_fadeOut',colorStart:'yellow',colorTrigger:'green' })
+//.addIndicators({name:'projects_overlay_fadeIn',colorStart:'yellow',colorTrigger:'green' })
 .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -178,5 +178,5 @@ new ScrollMagic.Scene({
  offset: -100 
 })
 .setTween("#projects_overlay", .5, {opacity:1, ease: Power1.easeOut})
-.addIndicators({name:'projects_overlay_fadeIn',colorStart:'green',colorTrigger:'red' })
+//.addIndicators({name:'projects_overlay_fadeOut',colorStart:'green',colorTrigger:'red' })
 .addTo(controller);
