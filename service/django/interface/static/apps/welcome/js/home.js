@@ -52,7 +52,7 @@ new ScrollMagic.Scene({
  offset: 350 
 })
 .setTween("#lead_image_fade", 1.0, {opacity:0, ease: Power1.easeOut})
-.addIndicators({name:'lead_image_fade',colorStart:'purple',colorTrigger:'yellow' })
+// .addIndicators({name:'lead_image_fade',colorStart:'purple',colorTrigger:'yellow' })
 .addTo(controller);
 
 new ScrollMagic.Scene({
