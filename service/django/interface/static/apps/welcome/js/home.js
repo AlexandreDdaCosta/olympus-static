@@ -1,5 +1,9 @@
 // background images
 
+// Swapping debugging indicators
+// ON %s/\/\/\.addIndicators/.addIndicators/g
+// OFF %s/\.addIndicators/\/\/.addIndicators/g
+
 $(document).ready(function(){
     $(window).scroll(function(){
     var pxToTop = $(window).scrollTop();
@@ -52,7 +56,7 @@ new ScrollMagic.Scene({
  offset: 350 
 })
 .setTween("#lead_image_fade", 1.0, {opacity:0, ease: Power1.easeOut})
-// .addIndicators({name:'lead_image_fade',colorStart:'purple',colorTrigger:'yellow' })
+//.addIndicators({name:'lead_image_fade',colorStart:'purple',colorTrigger:'yellow' })
 .addTo(controller);
 
 new ScrollMagic.Scene({
@@ -120,8 +124,8 @@ new ScrollMagic.Scene({
 
 new ScrollMagic.Scene({
  triggerElement: '#blog',
- duration: "60%",
- offset: -400 
+ duration: "40%",
+ offset: -200 
 })
 .setTween("#welcome_overlay", .5, {opacity:1, ease: Power1.easeIn})
 //.addIndicators({name:'welcome_overlay_fadeIn',colorStart:'green',colorTrigger:'red' })
