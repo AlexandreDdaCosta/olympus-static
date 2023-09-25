@@ -71,7 +71,7 @@ new ScrollMagic.Scene({
 new ScrollMagic.Scene({
  triggerElement: '#intro_image',
  duration: "50%",
- offset: 600 
+ offset: 1100
 })
 .setTween("#intro_image", 1.0, {opacity: 0})
 //.addIndicators({name:'intro_image',colorStart:'green',colorTrigger:'red' })
